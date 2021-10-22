@@ -21,45 +21,61 @@
             <img src="img/stamp.svg" alt="Selo Rocketseat" />
           </span>
           <img
-            src="https://lorempixel.com/185/185/people/"
+            src="https://media-exp1.licdn.com/dms/image/C4D03AQH1s-QxPdgujA/profile-displayphoto-shrink_800_800/0/1573222346598?e=1640217600&v=beta&t=3Gpc2IsMaTT_X9l7t7HxIt0T9yBwFAA_-OcVWuoJqYg"
             alt="Foto pessoal"
           />
         </div>
-        <h1>Daniel Oliveira</h1>
-        <a href="https://github.com/danielbarrosdeoliveira">
+        <h1 id="userName"></h1>
+        <a target="_blank" href="https://github.com/teste">
           <img src="img/github.svg" alt="logo do github" />
           danieloliveira_dev
         </a>
         <p>Frontend developer, focused on Vue.js, Typescript, SASS (SCSS)</p>
-        <ul>
-          <li>
-            <a
-              target="_blank"
-              href="https://www.youtube.com/channel/UCQURUfdaWsPecz7R6S3hW7w"
-            >
+        <ul id="socialLinks">
+          <li class="youtube">
+            <a target="_blank" href="#">
               <img src="img/youtube.svg" alt="ícone do YouTube" />
             </a>
           </li>
-          <li>
-            <a target="_blank" href="https://instagram.com/danieloliveira_dev">
+          <li class="instagram">
+            <a target="_blank" href="#">
               <img src="img/instagram.svg" alt="ícone do instagram" />
             </a>
           </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://facebook.com/danielbarrosdeoliveira"
-            >
+          <li class="facebook">
+            <a target="_blank" href="#">
               <img src="img/facebook.svg" alt="ícone do facebook" />
             </a>
           </li>
-          <li>
-            <a target="_blank" href="https://twitter.com/danieloliveira_dev">
-              <img src="img/twitter.svg" alt="ícone do Twitter" />
+          <li class="linkedin">
+            <a target="_blank" href="#">
+              <img src="img/linkedin.svg" alt="ícone do Twitter" />
             </a>
           </li>
         </ul>
       </div>
     </main>
+
+    <script>
+      // document.getElementById('userName').textContent = 'Daniel Oliveira'
+      // O comando abaixo faz a mesma coisa que o comando acima
+      userName.textContent = 'Daniel Oliveira'
+
+      const linksSocialMedia = {
+        github: 'danielbarrosdeoliveira',
+        youtube: 'channel/UCQURUfdaWsPecz7R6S3hW7w',
+        instagram: 'danieloliveira_dev',
+        facebook: 'danielbarrosoliveira',
+        linkedin: 'in/danielbarrosdeoliveira/'
+      }
+
+      function changeSocialMediaLinks() {
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+          li.children[0].href = `https://www.${social}.com/${linksSocialMedia[social]}`
+        }
+      }
+      changeSocialMediaLinks()
+    </script>
   </body>
 </html>
